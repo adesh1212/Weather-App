@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: all 0.1s ease-in;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.display{
+    z-index: -1;
+    visibility: hidden;
+}
+.active{
+    visibility: visible;
+    z-index: 4;
+}
+
+.wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);   
+    display: flex;
+    justify-content: center;
+}
+.show_weather{
+    width: 500px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+.search{
+    /* border: 1px solid black; */
+    z-index: -1;
+    position: relative;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    top: -70px;
+    width: 100%;
+    gap: 0.5rem;
+}
+.search_bar{
+    appearance: none;
+    border: none;
+    width: 90%;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    outline: none;
+}
+
+.search button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search_btn{
+    width: 1.4rem;
+}
+.display{
+    /* border: 1px solid black; */
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.location{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.display-temp{
+    /* border: 1px solid black; */
+    padding: 1rem;
+}
+.display-temp img{
+    position: relative;
+    left: 3rem;
+    filter: invert(1);
+    border-radius: 50%;
+    background-color: black;
+    margin-top: 1.5rem;
+}
+
+
+/* loader */
+.loader {
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+.btns button{
+    appearance: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-inline:2rem ;
+    transition: all 0.4s ease-in-out;
+}
+
+.btns button:hover{
+    background-color: black;
+    color: white;
+}
+
+.change_color{
+    background-color: gray;
+}
+
+.coords{
+    opacity: 0;
+    z-index: -1;
+    margin-top: 20px;
+}
+
+.coords input{
+    appearance: none;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    padding: 0.5rem;
+    width: 60px;
+    font-size: 1rem;
+}
+
+.get_weather{
+    border: none;
+    outline: none;
+    padding: 0.7rem;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    margin-top: 1.5rem;
+}
+.btn{
+    display: flex;
+
+}
+.get_weather:hover{
+    background-color: white;
+    color: blue;
+}
+#lat{
+    margin-right: 2rem;
+}
+.coords_submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    top: 50%;
+}
+.visible{
+    opacity: 1;
+    z-index: 4;
+}
+
+@media only screen and (max-width:500px) {
+    .show_weather{
+        width: 100%;
+        height: 100vh;
+    }
+    #lat{
+        margin-right: 1rem;
+    }  
+    .btns button{
+        margin-inline: 0rem;
+    }
+    .btn{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .search{
+        top: -100px;
+    }
+}
+
+@media screen and (max-height:400px){
+    .show_weather{
+        height: 100vh;
+    }
+}

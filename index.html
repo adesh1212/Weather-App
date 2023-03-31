@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherCheckKar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="show_weather">
+            <h1>My Weather App</h1>
+
+            <div class="btns">
+                <button class="city_btn">Enter City Name</button>
+                <button class="coords_btn">Enter Coordinates</button>
+            </div>
+            <!-- According to Coordinates -->
+            <div class="coords">
+                <div class="btn">
+                    <div class="b1">
+                        <label for="lat">Enter Latitude</label>
+                        <input type="number" name="lat" id="lat">
+                    </div>
+                    <div class="b2">
+                        <label for="lon">Enter Longitude</label>
+                        <input type="number" name="lon" id="lon">
+                    </div>
+                </div>
+
+                <div class="coords_submit">
+                    <button class="get_weather">Get Weather</button>
+                </div>
+            </div>
+            <div class="search">
+                <button>
+                    <img src="./searchengin.svg" alt="search" class="search_btn">
+                </button>
+                <input type="text" placeholder="Enter city-name to search for.." class="search_bar">
+            </div>
+
+            <!-- According to City Name -->
+            <div class="display">
+                <div class="location">
+                    <h2 id="display-location"></h2>
+
+                </div>
+                <div class="display-temp">
+                    <h2 class="temp"></h2>
+                    <img src=" https://openweathermap.org/img/wn/50n.png" alt="weather_img" class="weather_img">
+                </div>
+            </div>
+
+        </div>
+        <span class="loader"></span>
+        <span class="error">
+            <h1>404,NOT FOUND</h1>
+        </span>
+
+
+
+        <!-- Wrapper ends here -->
+    </div>
+
+
+
+    <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/2a56ff2c9e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
