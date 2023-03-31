@@ -85,7 +85,7 @@ async function update(city)
     let temperature=await (data.main.temp-273.15).toFixed(1);
     temp.innerText=`${main}, ${temperature}`;
     weather_img.src=`https://openweathermap.org/img/wn/${icon}.png`;
-    
+    error.classList.remove('visible');
     display.classList.add("active");
     }
     catch(err){
@@ -109,7 +109,7 @@ async function update2(lat,lan)
     let temperature=await (data.main.temp-273.15).toFixed(1);
     temp.innerText=`${main}, ${temperature}`;
     weather_img.src=` https://openweathermap.org/img/wn/${icon}.png`;
-    
+    error.classList.remove('visible');
     display.classList.add("active");
     }
     catch(err){
